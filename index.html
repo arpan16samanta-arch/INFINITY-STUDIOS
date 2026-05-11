@@ -3,18 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY Portfolio</title>
+    <title>Arpan Studios | Product Photography</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <nav>
-        <h2>My Website</h2>
+
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="custom-logo">
+            INFINITY STUDIOS
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <main>
-        <h1>Welcome!</h1>
-        <p>I am building this site from scratch using GitHub and Vercel.</p>
-        <button>Learn More</button>
+        <div class="profile-wrapper">
+            <img src="profile.jpg" alt="Arpan" class="profile-pic">
+        </div>
+
+        <section class="intro">
+            <span class="badge"> E-commerce Artist </span>
+            <h1>Images that turn viewers into buyers.</h1>
+            <p>High-end studio photography designed for the online marketplaces like Amazon, Meesho, and Flipkart. I create the visual trust your products which dominates the marketplace.</p>
+            
+            <div class="cta-group">
+                <a href="#work"><button class="btn-primary">View Portfolio</button></a>
+                <a href="#contact"><button class="btn-secondary">Get a Quote</button></a>
+            </div>
+        </section>
     </main>
+<section id="about" class="about-section">
+    <div class="about-container">
+        
+        <div class="about-intro">
+            <span class="badge-small">The Vision</span>
+            <h2>High-Conversion Visuals.<br>Zero Compromise.</h2>
+            <p class="lead-text">In the fast-paced world of online marketplaces, your product visuals are your first—and often only—impression. I bridge the gap between amateur content and high-end commercial results.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card-icon"><span class="material-symbols-outlined">photo_filter</span></div>
+                <h3>Product Image Transformation</h3>
+                <p>I transform amateur snapshots into high-definition, marketplace-ready assets for Amazon, Shopify, or eBay. I don’t just "touch up" photos—I rebuild them using Precision & Logic.</p>
+            </div>
+            
+            <div class="service-card highlighted">
+                <div class="card-icon"><span class="material-symbols-outlined">videocam</span></div>
+                <h3>High-Impact UGC Videos</h3>
+                <p>Authentic, high-energy content for TikTok, Reels, and Shorts. Avoid massive agency fees while getting relatable video that builds social proof and drives sales.</p>
+                <div class="mini-tag">New Service</div>
+            </div>
+        </div>
+
+        <div class="benefits-wrap">
+            <span class="badge-small center">The Impact</span>
+            <h3 class="section-title">Your 24/7 Salesperson</h3>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <h4>Builds Trust</h4>
+                    <p>Clear images and authentic videos give customers confidence to click "Buy Now."</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Boosts CTR</h4>
+                    <p>Stand out against competitors with scroll-stopping video and crisp visuals.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Maximizes ROI</h4>
+                    <p>Top-tier results at a fraction of agency costs, protecting your profit margins.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Reduces Returns</h4>
+                    <p>Crystal clear details mean no "surprises" for the customer upon delivery.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-box">
+            <div class="story-content">
+                <span class="badge-accent">My Story</span>
+                <h3>From Neighborhood Problem to Professional Solution</h3>
+                <p>My journey started with a simple observation. I saw local sellers—starting with my own neighbors—struggling with the high costs of professional content. I began experimenting with digital reconstruction and video editing on my computer, turning a basic photo into a high-end listing.</p>
+                <p>Today, I balance my high school studies with a relentless drive to provide world-class content for sellers everywhere, helping entrepreneurs scale without technical or financial barriers.</p>
+            </div>
+        </div>
+
+        <div class="process-wrap">
+            <h3>My Process</h3>
+            <div class="process-grid">
+                <div class="p-item"><span>01</span><p>Image Upscaling</p></div>
+                <div class="p-item"><span>02</span><p>Color Correction</p></div>
+                <div class="p-item"><span>03</span><p>UGC Strategy</p></div>
+                <div class="p-item"><span>04</span><p>Detail Enhancement</p></div>
+            </div>
+            <p class="cta-mini">Stop letting bad content hold back your sales. Let’s make your products look as good as they actually are.</p>
+        </div>
+
+    </div>
+</section>
+
+    <section id="work" class="work-section">
+    <div class="work-container">
+        <span class="badge-small">Portfolio</span>
+        <h2>Selected Work</h2>
+        
+        <h3 class="work-subtitle">Product Photography</h3>
+        <div class="work-grid">
+            <div class="work-item">
+                <img src="product1.jpg" alt="Work 1">
+                <div class="work-overlay"><h3>Electronics</h3></div>
+            </div>
+            <div class="work-item">
+                <img src="product2.jpg" alt="Work 2">
+                <div class="work-overlay"><h3>Lifestyle</h3></div>
+            </div>
+            <div class="work-item">
+                <img src="product3.jpg" alt="Work 3">
+                <div class="work-overlay"><h3>Fashion</h3></div>
+            </div>
+            <div class="work-item">
+                <img src="product4.jpg" alt="Work 4">
+                <div class="work-overlay"><h3>Cosmetics</h3></div>
+            </div>
+        </div>
+
+        <div class="ugc-portfolio">
+            <h3 class="work-subtitle">UGC Videos Portfolio</h3>
+            <div class="video-container">
+                <video controls poster="video-thumbnail.jpg" class="portfolio-video">
+                    <source src="ugc-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                </div>
+            <div class="video-info">
+                <h4>Authentic Content for Social Commerce</h4>
+                <p>High-energy, relatable video content designed to stop the scroll on TikTok, Reels, and YouTube Shorts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-box">
+                <span class="badge-small">Contact</span>
+                <h2>Start a Project</h2>
+                <p>Ready to upgrade your product images? Let's discuss your requirements.</p>
+                
+                <div class="contact-info-grid">
+                    <div class="info-item">
+                        <span class="material-symbols-outlined">mail</span>
+                        <div>
+                            <h4>Email Me</h4>
+                            <p>arpan16.samanta@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-symbols-outlined">call</span>
+                        <div>
+                            <h4>Call/Msg Me</h4>
+                            <p>+91 85850 76843</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="mailto:arpan@studios.com" class="mail-btn">Send an Email</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Location</h3>
+                <p>Based in India<br>Serving Worldwide</p>
+            </div>
+           <div class="footer-column">
+    <h3>Social</h3>
+    <a href="https://www.instagram.com/infi.nity1127/" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/in/YOUR_USERNAME_HERE/" target="_blank">LinkedIn</a>
+</div>
+            <div class="footer-column">
+                <p class="copyright">&copy; 2026 Arpan Studios.<br>Fresh Product Media.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<button id="backToTop" class="back-to-top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        // Show button when user scrolls down 300px
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        // Scroll to top when clicked
+        backToTopBtn.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
 </body>
 </html>

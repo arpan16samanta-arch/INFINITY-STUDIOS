@@ -81,9 +81,24 @@ nav {
     background: radial-gradient(circle at top, #fff1f2 0%, var(--white) 60%);
 }
 
+/* --- HERO SECTION INITIALIZATION --- */
+.hero-section { 
+    text-align: center; 
+    padding: 160px 20px 100px 20px;
+    background: radial-gradient(circle at top, #fff1f2 0%, var(--white) 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .hero-container {
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Forces every nested element to center horizontally */
+    text-align: center;
 }
 
 .profile-pic { 
@@ -96,27 +111,6 @@ nav {
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12); 
 }
 
-.badge { 
-    padding: 6px 14px; 
-    background: #fff1f2; 
-    color: var(--red-accent); 
-    border-radius: 100px; 
-    font-size: 0.72rem; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    display: inline-block; 
-    margin-bottom: 20px; 
-    letter-spacing: 0.5px;
-}
-
-h1 { 
-    font-size: 4.2rem; 
-    font-weight: 800; 
-    letter-spacing: -2.5px; 
-    line-height: 1.1; 
-    margin-bottom: 20px; 
-}
-
 .hero-subtitle { 
     color: var(--slate); 
     max-width: 600px; 
@@ -124,11 +118,12 @@ h1 {
     font-size: 1.2rem; 
 }
 
-/* --- GLOBAL BUTTON SYSTEM --- */
 .cta-group { 
     display: flex; 
     gap: 15px; 
     justify-content: center; 
+    align-items: center;
+    margin: 0 auto;
 }
 
 .btn {

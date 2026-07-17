@@ -79,13 +79,6 @@ nav {
     text-align: center; 
     padding: 160px 20px 100px 20px;
     background: radial-gradient(circle at top, #fff1f2 0%, var(--white) 60%);
-}
-
-/* --- HERO SECTION INITIALIZATION --- */
-.hero-section { 
-    text-align: center; 
-    padding: 160px 20px 100px 20px;
-    background: radial-gradient(circle at top, #fff1f2 0%, var(--white) 60%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +90,7 @@ nav {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Forces every nested element to center horizontally */
+    align-items: center;
     text-align: center;
 }
 
@@ -111,6 +104,27 @@ nav {
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12); 
 }
 
+.badge { 
+    padding: 6px 14px; 
+    background: #fff1f2; 
+    color: var(--red-accent); 
+    border-radius: 100px; 
+    font-size: 0.72rem; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    display: inline-block; 
+    margin-bottom: 20px; 
+    letter-spacing: 0.5px;
+}
+
+h1 { 
+    font-size: 4.2rem; 
+    font-weight: 800; 
+    letter-spacing: -2.5px; 
+    line-height: 1.1; 
+    margin-bottom: 20px; 
+}
+
 .hero-subtitle { 
     color: var(--slate); 
     max-width: 600px; 
@@ -118,6 +132,7 @@ nav {
     font-size: 1.2rem; 
 }
 
+/* --- GLOBAL BUTTON SYSTEM --- */
 .cta-group { 
     display: flex; 
     gap: 15px; 
@@ -125,6 +140,7 @@ nav {
     align-items: center;
     margin: 0 auto;
 }
+
 .btn {
     padding: 16px 36px; 
     border-radius: 14px; 
@@ -273,4 +289,287 @@ nav {
 .story-box p { opacity: 0.85; font-size: 1.15rem; margin-bottom: 25px; }
 
 /* Process Steps Layout */
-.process-wrap h3
+.process-wrap h3 { text-align: center; font-size: 2.2rem; margin-bottom: 40px; }
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.p-item {
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+}
+
+.p-item span { 
+    font-size: 2rem; 
+    font-weight: 800; 
+    color: var(--red-accent); 
+    display: block; 
+    margin-bottom: 12px; 
+}
+
+.cta-mini { text-align: center; margin-top: 60px; font-weight: 700; font-size: 1.4rem; color: var(--navy); }
+
+/* --- PORTFOLIO WORK CORE SYSTEMS --- */
+.work-section { 
+    padding: 120px 5%; 
+    background: var(--white); 
+}
+
+.work-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.work-subtitle { 
+    font-size: 2rem; 
+    margin: 60px 0 25px 0; 
+    font-weight: 700; 
+    color: var(--navy); 
+    letter-spacing: -0.5px;
+}
+
+/* Master Shared Layout Grid System */
+.portfolio-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 40px; 
+}
+
+/* Portfolio Card Structural Enforcements */
+.portfolio-card { 
+    border-radius: 24px; 
+    overflow: hidden; 
+    background: var(--light-bg); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--card-shadow);
+}
+
+.media-wrap {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Ratio Configurations */
+.grid-4-5 {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+}
+.grid-4-5 .media-wrap { aspect-ratio: 4 / 5; }
+.grid-16-9 .media-wrap.aspect-16-9 { aspect-ratio: 16 / 9; }
+
+.media-wrap img, 
+.media-wrap video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease; 
+    display: block;
+}
+
+/* Interactive Photography Hover Effects */
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.grid-4-5 .portfolio-card:hover img { 
+    transform: scale(1.06); 
+}
+
+.work-overlay { 
+    position: absolute; 
+    inset: 0; 
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 70%, transparent 100%); 
+    display: flex; 
+    align-items: flex-end; 
+    padding: 30px; 
+    opacity: 0; 
+    transition: opacity 0.4s ease; 
+    color: var(--white); 
+}
+
+.grid-4-5 .portfolio-card:hover .work-overlay { opacity: 1; }
+
+/* Horizontal Editing Elements Custom Padding Blocks */
+.horizontal-card {
+    background: var(--light-bg);
+    border: 1px solid #f1f5f9;
+}
+
+.card-details {
+    padding: 25px;
+    background: var(--white);
+    flex-grow: 1;
+}
+
+.card-details h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.card-details p {
+    color: var(--slate);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* --- SINGLE DISPLAY STANDALONE UGC VIDEO PORTFOLIO --- */
+.ugc-portfolio {
+    background: var(--light-bg);
+    padding: 60px 50px;
+    border-radius: 40px;
+    margin: 60px 0;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9; 
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.15);
+    background: #000;
+}
+
+.portfolio-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.video-info { text-align: center; margin-top: 35px; }
+.video-info h4 { font-size: 1.5rem; margin-bottom: 10px; color: var(--navy); }
+.video-info p { color: var(--slate); max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+/* --- CONTACT SECTION --- */
+.contact-section { 
+    padding: 120px 5%; 
+    background: var(--white); 
+}
+
+.contact-container { max-width: 850px; margin: 0 auto; }
+
+.contact-box { 
+    background: var(--light-bg); 
+    padding: 60px; 
+    border-radius: 40px; 
+    text-align: center; 
+}
+
+.contact-info-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px; 
+    margin: 40px 0; 
+    text-align: left; 
+}
+
+.info-item { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+    background: var(--white); 
+    padding: 25px; 
+    border-radius: 20px; 
+    box-shadow: var(--card-shadow);
+}
+
+.info-item span { color: var(--red-accent); font-size: 32px; }
+.info-item strong { display: block; margin-bottom: 4px; }
+
+.mail-btn { 
+    display: inline-block; 
+    background: var(--navy); 
+    color: var(--white); 
+    padding: 20px 45px; 
+    border-radius: 16px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    transition: all 0.3s ease; 
+}
+
+.mail-btn:hover { 
+    background: var(--red-accent); 
+    transform: translateY(-3px); 
+    box-shadow: 0 15px 30px rgba(225, 29, 72, 0.2);
+}
+
+/* --- FOOTER LAYOUT --- */
+footer { 
+    padding: 100px 5% 50px 5%; 
+    border-top: 1px solid #f1f5f9; 
+}
+
+.footer-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+
+.footer-column { margin-bottom: 40px; }
+.footer-column h3 { font-size: 1.1rem; margin-bottom: 20px; }
+.footer-column a, .footer-column p { color: var(--slate); text-decoration: none; display: block; font-size: 0.95rem; margin-bottom: 10px; }
+.footer-column a:hover { color: var(--navy); }
+.copyright { text-align: right; color: #94a3b8 !important; }
+
+/* --- BACK TO TOP ENFORCEMENT --- */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 54px;
+    height: 54px;
+    background-color: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+    transition: all 0.3s ease;
+    z-index: 3000;
+}
+
+.back-to-top span { font-size: 26px; }
+
+.back-to-top:hover {
+    background-color: var(--red-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(225, 29, 72, 0.4);
+}
+
+/* --- DISPLAY MEDIA RESPONSIVENESS CONTROLS --- */
+@media (max-width: 992px) {
+    h1 { font-size: 3.2rem; }
+    .about-intro h2 { font-size: 2.8rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    h1 { font-size: 2.6rem; }
+    .about-intro h2 { font-size: 2.2rem; }
+    .contact-info-grid { grid-template-columns: 1fr; }
+    .story-box { padding: 40px 25px; }
+    .ugc-portfolio { padding: 40px 20px; }
+    .footer-container { flex-direction: column; text-align: center; }
+    .copyright { text-align: center; margin-top: 10px; }
+    .video-container { aspect-ratio: 9 / 16; } 
+    .back-to-top { bottom: 25px; right: 25px; width: 48px; height: 48px; }
+}

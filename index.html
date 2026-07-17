@@ -149,36 +149,10 @@
                     <p>High-energy, relatable video content designed to stop the scroll on TikTok, Reels, and YouTube Shorts.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <h3 class="work-subtitle">Thumbnail & Audio Story Portfolios</h3>
-            <div class="work-grid">
-                
-                <div class="editing-card-item">
-                    <div class="aspect-16-9">
-                        <img src="thumbnail-preview.jpg" alt="Thumbnail Design Presentation">
-                    </div>
-                    <div class="editing-card-info">
-                        <h4>High-CTR YouTube Thumbnails</h4>
-                        <p>Scroll-stopping thumbnail designs engineered to maximize click-through rates. Features custom color grading, high-contrast text layout, and precision subject isolation.</p>
-                    </div>
-                </div>
-
-                <div class="editing-card-item">
-                    <div class="aspect-16-9">
-                        <video controls poster="audio-story-poster.jpg" class="portfolio-video">
-                            <source src="audio-story.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="editing-card-info">
-                        <h4>Immersive Audio Story Visualizers</h4>
-                        <p>Dynamic video formatting for audio dramas, narrative podcasts, and voiceover stories. Combined with kinetic typography, sound effects, and atmospheric background editing.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div> </section> <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-box">
                 <h2>Let's Upgrade Your Store</h2>
@@ -231,6 +205,7 @@
     <script>
         const backToTopBtn = document.getElementById("backToTop");
 
+        // Show button when user scrolls down 300px
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 backToTopBtn.style.display = "flex";
@@ -239,6 +214,7 @@
             }
         };
 
+        // Scroll to top when clicked
         backToTopBtn.onclick = function() {
             window.scrollTo({
                 top: 0,

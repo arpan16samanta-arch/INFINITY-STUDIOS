@@ -1,17 +1,17 @@
 /* --- PREMIUM VARIABLE & PALETTE SYSTEM --- */
 :root {
     --navy-dark: #0f172a;       /* Deep, high-end base color */
-    --brand-blue: #2563eb;      /* Vibrant sapphire accent color */
+    --brand-rose: #e11d48;      /* Vibrant luxury Rosé accent color */
     --slate-text: #475569;      /* Smooth premium body text color */
     --bg-white: #ffffff;        /* Clean pure white background */
     --bg-premium-light: #f8fafc;/* Soft light grey-blue background */
-    --bg-cream-accent: #fcfaf2; /* Elegant cream highlight background */
+    --bg-rose-accent: #fff1f2;  /* Soft, elegant Rosé tinted backdrop */
     
     /* Variable Border Configurations */
     --border-thin: 1px solid #e2e8f0;
     --border-medium: 2px solid #cbd5e1;
     --border-thick-dark: 4px solid #0f172a;
-    --border-thick-blue: 4px solid #2563eb;
+    --border-thick-rose: 4px solid #e11d48;
     
     --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
     --radius-premium: 20px;
@@ -38,7 +38,7 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: var(--border-thin); /* Thin modern border */
+    border-bottom: var(--border-thin);
 }
 
 .nav-container {
@@ -74,14 +74,13 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--brand-blue);
+    color: var(--brand-rose);
 }
 
 /* --- HERO SECTION (PREMIUM CONTRAST BG BACKGROUND) --- */
 .hero-section {
     padding: 160px 25px 100px 25px;
-    /* Rich radial mix for a high-end backdrop */
-    background: radial-gradient(circle at top right, #eff6ff 0%, var(--bg-white) 55%);
+    background: radial-gradient(circle at top right, var(--bg-rose-accent) 0%, var(--bg-white) 55%);
 }
 
 .hero-container {
@@ -98,14 +97,14 @@ nav {
     height: 150px;
     border-radius: 40px;
     object-fit: cover;
-    border: var(--border-thick-dark); /* Thick dark premium frame */
+    border: var(--border-thick-dark);
     margin-bottom: 25px;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
 }
 
 .badge {
-    background: #eff6ff;
-    color: var(--brand-blue);
+    background: var(--bg-rose-accent);
+    color: var(--brand-rose);
     padding: 8px 18px;
     border-radius: 100px;
     font-size: 0.8rem;
@@ -114,7 +113,7 @@ nav {
     text-transform: uppercase;
     display: inline-block;
     margin-bottom: 20px;
-    border: 1px solid rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(225, 29, 72, 0.15);
 }
 
 .hero-section h1 {
@@ -137,6 +136,7 @@ nav {
     gap: 15px;
 }
 
+/* --- BUTTONS DECORATED WITH ROSÉ --- */
 .btn {
     padding: 14px 32px;
     border-radius: 14px;
@@ -146,31 +146,31 @@ nav {
 }
 
 .btn-primary {
-    background: var(--navy-dark);
+    background: var(--brand-rose); /* Rosé base color button */
     color: var(--bg-white);
 }
 
 .btn-primary:hover {
-    background: var(--brand-blue);
+    background: var(--navy-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
 }
 
 .btn-secondary {
     background: var(--bg-white);
-    color: var(--navy-dark);
-    border: var(--border-thin);
+    color: var(--brand-rose); /* Rosé colored text */
+    border: 1px solid rgba(225, 29, 72, 0.3); /* Soft Rosé border outline */
 }
 
 .btn-secondary:hover {
-    background: var(--bg-premium-light);
+    background: var(--bg-rose-accent);
     transform: translateY(-2px);
 }
 
-/* --- ABOUT SECTION (SOLID CONTRAST BACKGROUND COLOURED BLOCK) --- */
+/* --- ABOUT SECTION --- */
 .about-section {
     padding: 100px 25px;
-    background-color: var(--bg-premium-light); /* Complete background block distinction */
+    background-color: var(--bg-premium-light);
 }
 
 .about-container {
@@ -196,7 +196,7 @@ nav {
     color: var(--slate-text);
 }
 
-/* Process Steps (Elegant Thin Borders) */
+/* Process Steps (Elegant Thin Borders + Rosé Accents) */
 .process-wrap h3 {
     text-align: center;
     font-size: 1.8rem;
@@ -214,21 +214,21 @@ nav {
     background: var(--bg-white);
     padding: 30px 20px;
     border-radius: var(--radius-premium);
-    border: var(--border-thin); /* Thin minimal border layout */
+    border: var(--border-thin);
     text-align: center;
     box-shadow: var(--card-shadow);
     transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .p-item:hover {
-    border-color: var(--brand-blue); /* Turns accent blue cleanly */
+    border-color: var(--brand-rose); /* Turns premium Rosé cleanly on mouse hover */
     transform: translateY(-3px);
 }
 
 .p-item span {
     font-size: 2rem;
     font-weight: 800;
-    color: var(--brand-blue);
+    color: var(--brand-rose);
     display: block;
     margin-bottom: 10px;
 }
@@ -262,7 +262,7 @@ nav {
     font-weight: 700;
     margin: 60px 0 25px 0;
     padding-left: 15px;
-    border-left: var(--border-thick-blue); /* Bold blue side dynamic indicator line */
+    border-left: var(--border-thick-rose); /* Bold Rosé side dynamic indicator line */
 }
 
 .portfolio-grid {
@@ -275,7 +275,7 @@ nav {
     background: var(--bg-white);
     border-radius: var(--radius-premium);
     overflow: hidden;
-    border: var(--border-thick-dark); /* Heavy premium structural frame border */
+    border: var(--border-thick-dark);
     box-shadow: var(--card-shadow);
     transition: transform 0.3s ease;
 }
@@ -317,7 +317,7 @@ nav {
 .ugc-portfolio {
     max-width: 800px;
     margin: 40px auto;
-    background: var(--navy-dark); /* Solid inversion dark block styling */
+    background: var(--navy-dark);
     color: var(--bg-white);
     padding: 45px;
     border-radius: 30px;
@@ -358,7 +358,7 @@ nav {
     padding: 30px;
     background: var(--bg-premium-light);
     border-radius: var(--radius-premium);
-    border-left: var(--border-thick-blue);
+    border-left: var(--border-thick-rose);
 }
 
 .section-description {
@@ -388,7 +388,7 @@ nav {
 
 .thumb-slot-card {
     background: var(--bg-white);
-    border: var(--border-medium); /* Balanced medium-thick layout line */
+    border: var(--border-medium);
     border-radius: var(--radius-premium);
     overflow: hidden;
     box-shadow: var(--card-shadow);
@@ -423,10 +423,10 @@ nav {
     line-height: 1.4;
 }
 
-/* Audio Main Player Card (Thick Branding Color Border Accent) */
+/* Audio Main Player Card (Thick Rosé Accent Border) --- */
 .audio-main-card {
-    background: var(--bg-cream-accent); /* Distinct warm high-end background block tint */
-    border: var(--border-thick-blue);  /* Thick striking branded frame */
+    background: var(--bg-rose-accent); /* Soft Rosé background box */
+    border: var(--border-thick-rose);  /* Thick striking brand frame */
     border-radius: var(--radius-premium);
     overflow: hidden;
     box-shadow: var(--card-shadow);
@@ -454,7 +454,7 @@ nav {
     line-height: 1.6;
 }
 
-/* --- CONTACT GRID --- */
+/* --- CONTACT GRID & TEXT BOX STYLING --- */
 .contact-section {
     padding: 100px 25px;
     background: var(--bg-premium-light);
@@ -466,11 +466,12 @@ nav {
     margin: 0 auto;
 }
 
+/* Text Box Content Container decorated with smooth Rosé shadows */
 .contact-box {
     background: var(--bg-white);
     padding: 50px 40px;
     border-radius: var(--radius-premium);
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 10px 30px -10px rgba(225, 29, 72, 0.15); /* Soft Rosé ambient drop shadow */
     border: var(--border-thin);
 }
 
@@ -482,7 +483,7 @@ nav {
 
 .mail-btn {
     display: inline-block;
-    background: var(--navy-dark);
+    background: var(--brand-rose); /* Rosé colored CTA button */
     color: var(--bg-white);
     padding: 16px 36px;
     text-decoration: none;
@@ -492,7 +493,7 @@ nav {
 }
 
 .mail-btn:hover {
-    background: var(--brand-blue);
+    background: var(--navy-dark);
 }
 
 /* --- FOOTER --- */
@@ -506,7 +507,7 @@ footer {
     font-weight: 500;
 }
 
-/* --- RESPONSIVE CONTROLS (RESPONSIVE WRAPPING) --- */
+/* --- RESPONSIVE CONTROLS --- */
 @media (max-width: 1024px) {
     .process-grid { grid-template-columns: repeat(2, 1fr); }
     .media-portfolio-layout { grid-template-columns: 1fr; }

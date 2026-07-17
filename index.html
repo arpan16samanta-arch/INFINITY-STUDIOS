@@ -14,32 +14,32 @@
 <body>
 
     <nav>
-        <div class="logo">
-            <img src="logo.png" alt="Infinity Studios Logo" class="custom-logo">
-            <span>INFINITY STUDIOS</span>
-        </div>
-        <div class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Infinity Studios Logo" class="custom-logo">
+                <span>INFINITY STUDIOS</span>
+            </div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <main id="hero">
-        <img src="profile.jpg" alt="Arpan" class="profile-pic">
-        <div>
+    <header id="hero" class="hero-section">
+        <div class="hero-container">
+            <img src="profile.jpg" alt="Arpan Portfolio Profile" class="profile-pic">
             <span class="badge">E-commerce Content Creator</span>
             <h1>Visuals That Drive Sales.</h1>
-            <div class="intro">
-                <p>I build high-conversion imagery and high-energy UGC video content tailored specifically for modern digital marketplaces.</p>
-            </div>
+            <p class="hero-subtitle">I build high-conversion imagery and high-energy UGC video content tailored specifically for modern digital marketplaces.</p>
             <div class="cta-group">
-                <button class="btn-primary" onclick="location.href='#work'">View Portfolio</button>
-                <button class="btn-secondary" onclick="location.href='#contact'">Let's Talk</button>
+                <a href="#work" class="btn btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn btn-secondary">Let's Talk</a>
             </div>
         </div>
-    </main>
+    </header>
 
     <section id="about" class="about-section">
         <div class="about-container">
@@ -117,22 +117,30 @@
             <h2>Selected Work</h2>
             
             <h3 class="work-subtitle">Product Photography</h3>
-            <div class="work-grid">
-                <div class="work-item">
-                    <img src="product1.jpg" alt="Work 1">
-                    <div class="work-overlay"><h3>Electronics</h3></div>
+            <div class="portfolio-grid grid-4-5">
+                <div class="portfolio-card">
+                    <div class="media-wrap">
+                        <img src="product1.jpg" alt="Electronics Visuals">
+                        <div class="work-overlay"><h3>Electronics</h3></div>
+                    </div>
                 </div>
-                <div class="work-item">
-                    <img src="product2.jpg" alt="Work 2">
-                    <div class="work-overlay"><h3>Lifestyle</h3></div>
+                <div class="portfolio-card">
+                    <div class="media-wrap">
+                        <img src="product2.jpg" alt="Lifestyle Visuals">
+                        <div class="work-overlay"><h3>Lifestyle</h3></div>
+                    </div>
                 </div>
-                <div class="work-item">
-                    <img src="product3.jpg" alt="Work 3">
-                    <div class="work-overlay"><h3>Fashion</h3></div>
+                <div class="portfolio-card">
+                    <div class="media-wrap">
+                        <img src="product3.jpg" alt="Fashion Visuals">
+                        <div class="work-overlay"><h3>Fashion</h3></div>
+                    </div>
                 </div>
-                <div class="work-item">
-                    <img src="product4.jpg" alt="Work 4">
-                    <div class="work-overlay"><h3>Cosmetics</h3></div>
+                <div class="portfolio-card">
+                    <div class="media-wrap">
+                        <img src="product4.jpg" alt="Cosmetics Visuals">
+                        <div class="work-overlay"><h3>Cosmetics</h3></div>
+                    </div>
                 </div>
             </div>
 
@@ -149,10 +157,36 @@
                     <p>High-energy, relatable video content designed to stop the scroll on TikTok, Reels, and YouTube Shorts.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="contact" class="contact-section">
+            <h3 class="work-subtitle">Thumbnail & Audio Story Portfolios</h3>
+            <div class="portfolio-grid grid-16-9">
+                
+                <div class="portfolio-card horizontal-card">
+                    <div class="media-wrap aspect-16-9">
+                        <img src="thumbnail-preview.jpg" alt="Thumbnail Design Presentation">
+                    </div>
+                    <div class="card-details">
+                        <h4>High-CTR YouTube Thumbnails</h4>
+                        <p>Scroll-stopping thumbnail designs engineered to maximize click-through rates. Features custom color grading, high-contrast text layout, and precision subject isolation.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card horizontal-card">
+                    <div class="media-wrap aspect-16-9">
+                        <video controls poster="audio-story-poster.jpg" class="portfolio-video">
+                            <source src="audio-story.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="card-details">
+                        <h4>Immersive Audio Story Visualizers</h4>
+                        <p>Dynamic video formatting for audio dramas, narrative podcasts, and voiceover stories. Combined with kinetic typography, sound effects, and atmospheric background editing.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div> </section> <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-box">
                 <h2>Let's Upgrade Your Store</h2>
@@ -205,7 +239,6 @@
     <script>
         const backToTopBtn = document.getElementById("backToTop");
 
-        // Show button when user scrolls down 300px
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 backToTopBtn.style.display = "flex";
@@ -214,7 +247,6 @@
             }
         };
 
-        // Scroll to top when clicked
         backToTopBtn.onclick = function() {
             window.scrollTo({
                 top: 0,

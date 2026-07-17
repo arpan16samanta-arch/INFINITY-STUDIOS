@@ -144,4 +144,110 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div
+                <div class="video-info">
+                    <h4>Authentic Content for Social Commerce</h4>
+                    <p>High-energy, relatable video content designed to stop the scroll on TikTok, Reels, and YouTube Shorts.</p>
+                </div>
+            </div>
+
+            <div class="editing-portfolio">
+                <h3 class="work-subtitle">Thumbnail & Audio Story Portfolios</h3>
+                <div class="editing-grid">
+                    
+                    <div class="editing-card">
+                        <div class="aspect-16-9">
+                            <img src="thumbnail-preview.jpg" alt="Thumbnail Design Presentation">
+                        </div>
+                        <div class="editing-info">
+                            <h4>High-CTR YouTube Thumbnails</h4>
+                            <p>Scroll-stopping thumbnail designs engineered to maximize click-through rates. Features custom color grading, high-contrast text layout, and precision subject isolation.</p>
+                        </div>
+                    </div>
+
+                    <div class="editing-card">
+                        <div class="aspect-16-9">
+                            <video controls poster="audio-story-poster.jpg" class="portfolio-video">
+                                <source src="audio-story.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="editing-info">
+                            <h4>Immersive Audio Story Visualizers</h4>
+                            <p>Dynamic video formatting for audio dramas, narrative podcasts, and voiceover stories. Combined with kinetic typography, sound effects, and atmospheric background editing.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> </section> <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-box">
+                <h2>Let's Upgrade Your Store</h2>
+                <p>Ready to stand out in the marketplace? Get in touch for a quote.</p>
+                
+                <div class="contact-info-grid">
+                    <div class="info-item">
+                        <span class="material-symbols-outlined">mail</span>
+                        <div>
+                            <p><strong>Email Me</strong></p>
+                            <p>yourname@email.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-symbols-outlined">schedule</span>
+                        <div>
+                            <p><strong>Response Time</strong></p>
+                            <p>Within 24 Hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="mailto:yourname@email.com" class="mail-btn">Send an Email</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Infinity Studios</h3>
+                <p>High-tier digital assets without the traditional agency fees.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Social Links</h3>
+                <a href="https://www.instagram.com/YOUR_USERNAME/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-column copyright">
+                <p>&copy; 2026 Infinity Studios.</p>
+                <p>All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+</body>
+</html>

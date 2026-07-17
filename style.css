@@ -1,13 +1,20 @@
-/* --- GLOBAL RESET & VARIABLES --- */
+/* --- PREMIUM VARIABLE & PALETTE SYSTEM --- */
 :root {
-    --navy: #0f172a;
-    --slate: #475569;
-    --white: #ffffff;
-    --bg-light: #f8fafc;
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-    --radius: 16px;
+    --navy-dark: #0f172a;       /* Deep, high-end base color */
+    --brand-blue: #2563eb;      /* Vibrant sapphire accent color */
+    --slate-text: #475569;      /* Smooth premium body text color */
+    --bg-white: #ffffff;        /* Clean pure white background */
+    --bg-premium-light: #f8fafc;/* Soft light grey-blue background */
+    --bg-cream-accent: #fcfaf2; /* Elegant cream highlight background */
+    
+    /* Variable Border Configurations */
+    --border-thin: 1px solid #e2e8f0;
+    --border-medium: 2px solid #cbd5e1;
+    --border-thick-dark: 4px solid #0f172a;
+    --border-thick-blue: 4px solid #2563eb;
+    
+    --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+    --radius-premium: 20px;
 }
 
 * {
@@ -17,27 +24,27 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-light);
-    color: var(--navy);
-    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-white);
+    color: var(--navy-dark);
+    line-height: 1.6;
 }
 
-/* --- NAVIGATION --- */
+/* --- NAV BAR (PREMIUM THIN BOTTOM BORDER) --- */
 nav {
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
-    border-bottom: 1px solid #e2e8f0;
+    z-index: 1000;
+    border-bottom: var(--border-thin); /* Thin modern border */
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 18px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,8 +53,9 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-weight: 700;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.15rem;
     letter-spacing: 0.5px;
 }
 
@@ -57,64 +65,71 @@ nav {
 }
 
 .nav-links a {
-    color: var(--slate);
+    color: var(--slate-text);
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 30px;
     font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s;
+    font-weight: 600;
+    transition: color 0.25s ease;
 }
 
 .nav-links a:hover {
-    color: var(--primary);
+    color: var(--brand-blue);
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (PREMIUM CONTRAST BG BACKGROUND) --- */
 .hero-section {
-    padding: 140px 20px 80px 20px;
-    background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
+    padding: 160px 25px 100px 25px;
+    /* Rich radial mix for a high-end backdrop */
+    background: radial-gradient(circle at top right, #eff6ff 0%, var(--bg-white) 55%);
 }
 
 .hero-container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 50px;
+    text-align: center;
 }
 
 .profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 40px;
     object-fit: cover;
-    box-shadow: var(--card-shadow);
+    border: var(--border-thick-dark); /* Thick dark premium frame */
+    margin-bottom: 25px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
 }
 
 .badge {
     background: #eff6ff;
-    color: var(--primary);
-    padding: 6px 14px;
+    color: var(--brand-blue);
+    padding: 8px 18px;
     border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
 .hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 3.8rem;
+    font-weight: 850;
     line-height: 1.1;
-    margin-bottom: 15px;
-    letter-spacing: -1px;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--slate);
-    max-width: 600px;
-    margin-bottom: 30px;
+    font-size: 1.25rem;
+    color: var(--slate-text);
+    max-width: 655px;
+    margin-bottom: 35px;
 }
 
 .cta-group {
@@ -123,86 +138,110 @@ nav {
 }
 
 .btn {
-    padding: 12px 24px;
-    border-radius: 12px;
+    padding: 14px 32px;
+    border-radius: 14px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s;
+    font-weight: 700;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary {
-    background: var(--primary);
-    color: var(--white);
+    background: var(--navy-dark);
+    color: var(--bg-white);
 }
 
 .btn-primary:hover {
-    background: var(--primary-hover);
+    background: var(--brand-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
 }
 
 .btn-secondary {
-    background: var(--white);
-    color: var(--navy);
-    border: 1px solid #e2e8f0;
+    background: var(--bg-white);
+    color: var(--navy-dark);
+    border: var(--border-thin);
 }
 
 .btn-secondary:hover {
-    background: #f1f5f9;
+    background: var(--bg-premium-light);
+    transform: translateY(-2px);
 }
 
-/* --- ABOUT SECTION --- */
+/* --- ABOUT SECTION (SOLID CONTRAST BACKGROUND COLOURED BLOCK) --- */
 .about-section {
-    padding: 80px 20px;
+    padding: 100px 25px;
+    background-color: var(--bg-premium-light); /* Complete background block distinction */
+}
+
+.about-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
+.about-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
 }
 
 .about-intro h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
     margin-bottom: 20px;
 }
 
 .lead-text {
-    font-size: 1.15rem;
-    color: var(--slate);
-    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--slate-text);
 }
 
+/* Process Steps (Elegant Thin Borders) */
 .process-wrap h3 {
-    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+    font-weight: 700;
 }
 
 .process-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .p-item {
-    background: var(--white);
-    padding: 20px;
-    border-radius: var(--radius);
-    border: 1px solid #e2e8f0;
+    background: var(--bg-white);
+    padding: 30px 20px;
+    border-radius: var(--radius-premium);
+    border: var(--border-thin); /* Thin minimal border layout */
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.p-item:hover {
+    border-color: var(--brand-blue); /* Turns accent blue cleanly */
+    transform: translateY(-3px);
 }
 
 .p-item span {
-    font-size: 0.85rem;
-    color: var(--primary);
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--brand-blue);
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-/* --- WORK SECTION (PORTFOLIO GRIDS FIX) --- */
+.p-item h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* --- PORTFOLIO WORK ROWS (THICK FRAME BORDERS) --- */
 .work-section {
-    padding: 80px 20px;
-    background: var(--white);
+    padding: 100px 25px;
+    background: var(--bg-white);
 }
 
 .work-container {
@@ -212,37 +251,42 @@ nav {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 50px;
 }
 
 .work-subtitle {
     font-size: 1.6rem;
-    margin: 50px 0 20px 0;
-    border-bottom: 2px solid #f1f5f9;
-    padding-bottom: 8px;
+    font-weight: 700;
+    margin: 60px 0 25px 0;
+    padding-left: 15px;
+    border-left: var(--border-thick-blue); /* Bold blue side dynamic indicator line */
 }
 
-/* Fixed Multi-Column Image Rows */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-bottom: 20px;
+    gap: 35px;
 }
 
 .portfolio-card {
-    background: var(--bg-light);
-    border-radius: var(--radius);
+    background: var(--bg-white);
+    border-radius: var(--radius-premium);
     overflow: hidden;
-    border: 1px solid #e2e8f0;
+    border: var(--border-thick-dark); /* Heavy premium structural frame border */
     box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
 }
 
-/* Keeps uploaded items completely fitted, scaling properly */
+.portfolio-card:hover {
+    transform: translateY(-4px);
+}
+
 .media-wrap {
     width: 100%;
-    aspect-ratio: 16 / 9; 
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #e2e8f0;
 }
@@ -250,32 +294,46 @@ nav {
 .media-wrap img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
 }
 
 .card-details {
-    padding: 20px;
+    padding: 24px;
 }
 
 .card-details h4 {
-    font-size: 1.15rem;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
 .card-details p {
-    color: var(--slate);
+    color: var(--slate-text);
     font-size: 0.95rem;
 }
 
-/* UGC Formatting Block */
+/* --- CONTRAST TEXTURE BACKGROUND BLOCK (UGC SECTION) --- */
 .ugc-portfolio {
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    background: var(--bg-light);
-    padding: 25px;
-    border-radius: 24px;
-    border: 1px solid #e2e8f0;
+    max-width: 800px;
+    margin: 40px auto;
+    background: var(--navy-dark); /* Solid inversion dark block styling */
+    color: var(--bg-white);
+    padding: 45px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.ugc-portfolio h4 {
+    font-size: 1.4rem;
+    font-weight: 750;
+    margin-bottom: 8px;
+}
+
+.ugc-portfolio p {
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .video-container {
@@ -284,7 +342,8 @@ nav {
     border-radius: 16px;
     overflow: hidden;
     background: #000;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    border: var(--border-medium);
 }
 
 .portfolio-video {
@@ -293,31 +352,34 @@ nav {
     object-fit: contain;
 }
 
-/* --- THUMBNAIL & AUDIO STORY SIDE-BY-SIDE SETUP --- */
+/* --- THUMBNAIL & AUDIO STORY SIDE-BY-SIDE GRID --- */
 .portfolio-intro-box {
-    margin: 60px 0 25px 0;
+    margin-top: 80px;
+    padding: 30px;
+    background: var(--bg-premium-light);
+    border-radius: var(--radius-premium);
+    border-left: var(--border-thick-blue);
 }
 
 .section-description {
-    color: var(--slate);
+    color: var(--slate-text);
     font-size: 1.05rem;
-    line-height: 1.6;
 }
 
 .media-portfolio-layout {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.3fr 1fr;
     gap: 40px;
-    align-items: start;
+    margin-top: 40px;
 }
 
 .column-title {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: var(--navy);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
-/* 4-Slot Small Miniatures Grid */
+/* 4 Miniature Slots Grid (Medium Clean Outlines) */
 .thumbnail-slots-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -325,10 +387,11 @@ nav {
 }
 
 .thumb-slot-card {
-    background: var(--bg-light);
-    border: 1px solid #e2e8f0;
-    border-radius: var(--radius);
+    background: var(--bg-white);
+    border: var(--border-medium); /* Balanced medium-thick layout line */
+    border-radius: var(--radius-premium);
     overflow: hidden;
+    box-shadow: var(--card-shadow);
 }
 
 .thumb-media {
@@ -345,26 +408,28 @@ nav {
 }
 
 .thumb-info {
-    padding: 12px;
+    padding: 15px;
 }
 
 .thumb-info h5 {
     font-size: 0.95rem;
-    margin-bottom: 3px;
+    font-weight: 700;
+    margin-bottom: 4px;
 }
 
 .thumb-info p {
-    font-size: 0.8rem;
-    color: var(--slate);
-    line-height: 1.3;
+    font-size: 0.82rem;
+    color: var(--slate-text);
+    line-height: 1.4;
 }
 
-/* Audio Player Section Layout */
+/* Audio Main Player Card (Thick Branding Color Border Accent) */
 .audio-main-card {
-    background: var(--bg-light);
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
+    background: var(--bg-cream-accent); /* Distinct warm high-end background block tint */
+    border: var(--border-thick-blue);  /* Thick striking branded frame */
+    border-radius: var(--radius-premium);
     overflow: hidden;
+    box-shadow: var(--card-shadow);
 }
 
 .audio-media {
@@ -374,75 +439,85 @@ nav {
 }
 
 .audio-info-box {
-    padding: 20px;
+    padding: 25px;
 }
 
 .audio-info-box h5 {
-    font-size: 1.05rem;
-    margin-bottom: 5px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
 .audio-info-box p {
-    font-size: 0.85rem;
-    color: var(--slate);
-    line-height: 1.5;
+    font-size: 0.9rem;
+    color: var(--slate-text);
+    line-height: 1.6;
 }
 
-/* --- CONTACT SECTION --- */
+/* --- CONTACT GRID --- */
 .contact-section {
-    padding: 80px 20px;
-    background: var(--bg-light);
+    padding: 100px 25px;
+    background: var(--bg-premium-light);
     text-align: center;
 }
 
 .contact-container {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
 .contact-box {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 24px;
+    background: var(--bg-white);
+    padding: 50px 40px;
+    border-radius: var(--radius-premium);
     box-shadow: var(--card-shadow);
-    border: 1px solid #e2e8f0;
+    border: var(--border-thin);
+}
+
+.contact-box h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
 }
 
 .mail-btn {
     display: inline-block;
-    background: var(--navy);
-    color: var(--white);
-    padding: 14px 30px;
+    background: var(--navy-dark);
+    color: var(--bg-white);
+    padding: 16px 36px;
     text-decoration: none;
     border-radius: 12px;
-    font-weight: 600;
-    margin-top: 15px;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+.mail-btn:hover {
+    background: var(--brand-blue);
 }
 
 /* --- FOOTER --- */
 footer {
-    padding: 30px 20px;
-    border-top: 1px solid #e2e8f0;
+    padding: 40px 25px;
     text-align: center;
-    background: var(--white);
-    color: var(--slate);
+    background: var(--bg-white);
+    color: var(--slate-text);
+    border-top: var(--border-thin);
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
-/* --- MEDIA QUERIES (MOBILE FIXES) --- */
-@media (max-width: 992px) {
-    .hero-container, .about-container, .media-portfolio-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .hero-section { text-align: center; }
-    .hero-container { flex-direction: column; }
-    .cta-group { justify-content: center; }
+/* --- RESPONSIVE CONTROLS (RESPONSIVE WRAPPING) --- */
+@media (max-width: 1024px) {
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .media-portfolio-layout { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 600px) {
-    .portfolio-grid, .thumbnail-slots-grid, .process-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-section h1 { font-size: 2.5rem; }
+@media (max-width: 768px) {
+    .portfolio-grid, .thumbnail-slots-grid { grid-template-columns: 1fr; }
+    .hero-section h1 { font-size: 2.8rem; }
+    .nav-links { display: none; }
+}
+
+@media (max-width: 480px) {
+    .process-grid { grid-template-columns: 1fr; }
 }

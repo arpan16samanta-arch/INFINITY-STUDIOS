@@ -65,7 +65,7 @@
       overflow: hidden; 
     }
 
-    /* Fixed containment: Holds background mask layer perfectly beneath text content */
+    /* Added scroll containment to lock background wallpaper in place */
     .work-scroll-container {
       position: absolute;
       top: 0;
@@ -75,7 +75,6 @@
       overflow-y: auto;
       scrollbar-width: thin;
       scroll-behavior: smooth;
-      background: rgba(255, 255, 255, 0.65); /* Keeps live video visible but shifts readability up */
       z-index: 2;
     }
 
@@ -106,4 +105,329 @@
     /* --- LOCKED LIVE WALLPAPER ENGINE --- */
     .bg-video {
       position: absolute;
-      top:
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    /* Structural container layouts */
+    .hero-container, .about-container, .contact-container {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .work-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 20px 60px 20px; 
+      box-sizing: border-box;
+    }
+
+    /* Readability Enhancements over Vivid Motion Wallpapers */
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .work-section::before {
+      content: '';
+      position: absolute; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.65); 
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="logo.png" alt="Infinity Studios Logo" class="custom-logo">
+        <span>INFINITY STUDIOS</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" onclick="navigateTo('hero')">Home</a>
+        <a href="#" onclick="navigateTo('about')">About</a>
+        <a href="#" onclick="navigateTo('work')">Work</a>
+        <a href="#" onclick="navigateTo('contact')">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <header id="hero" class="hero-section active">
+      <video autoplay loop muted playsinline class="bg-video">
+        <source src="bg-video1.mp4" type="video/mp4">
+      </video>
+      
+      <div class="hero-container">
+        <img src="profile.jpg" alt="Arpan Portfolio Profile" class="profile-pic">
+        <div>
+          <span class="badge">E-commerce Content Creator</span>
+          <h1>Visuals That Drive Sales.</h1>
+          <p class="hero-subtitle">I build high-conversion imagery and high-energy UGC video content tailored specifically for modern digital marketplaces.</p>
+          <div class="cta-group">
+            <a href="#" class="btn btn-primary" onclick="navigateTo('work')">View Portfolio</a>
+            <a href="#" class="btn btn-secondary" onclick="navigateTo('contact')">Let's Talk</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="about-section">
+      <video autoplay loop muted playsinline class="bg-video">
+        <source src="bg-video2.mp4" type="video/mp4">
+      </video>
+      
+      <div class="about-container">
+        <div class="about-intro" style="text-align: center; max-width: 800px; padding: 0 20px;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #111;">High-Conversion Visuals. Zero Compromise.</h2>
+          <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; color: #222;">In the fast-paced world of online marketplaces, your product visuals are your first—and often only—impression. I bridge the gap between amateur content and high-end commercial results.</p>
+          <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 40px; color: #222;">Today, I balance my high school studies with a relentless drive to provide world-class content for sellers everywhere, helping entrepreneurs scale without technical or financial barriers.</p>
+          
+          <h3 style="font-size: 1.8rem; margin-bottom: 30px; color: #111;">My Process</h3>
+          
+          <div class="process-grid" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <div class="process-card" style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; width: 160px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+              <h4 style="color: #e61e43; font-size: 1.5rem; margin: 0 0 10px 0;">01</h4>
+              <p style="margin: 0; font-weight: bold; color: #111;">Image Upscaling</p>
+            </div>
+            <div class="process-card" style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; width: 160px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+              <h4 style="color: #e61e43; font-size: 1.5rem; margin: 0 0 10px 0;">02</h4>
+              <p style="margin: 0; font-weight: bold; color: #111;">Color Correction</p>
+            </div>
+            <div class="process-card" style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; width: 160px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+              <h4 style="color: #e61e43; font-size: 1.5rem; margin: 0 0 10px 0;">03</h4>
+              <p style="margin: 0; font-weight: bold; color: #111;">UGC Strategy</p>
+            </div>
+            <div class="process-card" style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; width: 160px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+              <h4 style="color: #e61e43; font-size: 1.5rem; margin: 0 0 10px 0;">04</h4>
+              <p style="margin: 0; font-weight: bold; color: #111;">Detail Enhancement</p>
+            </div>
+          </div>
+          
+          <p style="margin-top: 40px; font-style: italic; font-weight: 600; color: #111;">Stop letting bad content hold back your sales. Let's make your products look as good as they actually are.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work-section">
+      <video autoplay loop muted playsinline class="bg-video">
+        <source src="bg-video3.mp4" type="video/mp4">
+      </video>
+      
+      <div class="work-scroll-container">
+        <div class="work-container">
+          <div style="text-align: center; margin-bottom: 50px;">
+            <span style="background: #ffebee; color: #e61e43; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px;">PORTFOLIO</span>
+            <h2 style="font-size: 2.8rem; margin: 15px 0; color: #0f172a;">Selected Work</h2>
+          </div>
+
+          <div style="margin-bottom: 60px;">
+            <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">Product Photography</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
+              <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                  <img src="product1.jpg" alt="Footwear Showcase" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 25px;">
+                  <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Footwear Showcase</h4>
+                  <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Studio-quality lighting enhancement and precision background cleaning.</p>
+                </div>
+              </div>
+              <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                  <img src="product2.jpg" alt="Commercial Edit" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 25px;">
+                  <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Commercial Edit</h4>
+                  <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Advanced color matching and commercial drop-shadow renders.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 60px;">
+            <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">Electronics</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
+              <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                  <img src="product3.jpg" alt="Apparel & Suits" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 25px;">
+                  <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Apparel & Suits</h4>
+                  <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">High-fidelity subject isolation and texture optimization templates.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 60px;">
+            <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">Lifestyle</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
+              <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                  <img src="product4.jpg" alt="Accessories Design" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 25px;">
+                  <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Accessories Design</h4>
+                  <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Dynamic commercial background manipulation to build buyer trust.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 60px;">
+            <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">Cosmetics</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
+              <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+                <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                  <img src="product4.jpg" alt="Skincare Product Design" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="padding: 25px;">
+                  <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Skincare Product Design</h4>
+                  <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Clean lifestyle editing engineered to highlight key packaging elements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 60px;">
+            <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">UGC Videos Portfolio</h3>
+            <div style="background: #0f172a; padding: 40px; border-radius: 24px; text-align: center; color: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+              <div style="max-width: 700px; margin: 0 auto 30px auto; border-radius: 14px; overflow: hidden; border: 2px solid #334155; aspect-ratio: 16/9; background: #020617;">
+                <video controls style="width: 100%; height: 100%; object-fit: cover;">
+                  <source src="images/ugc-video1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h4 style="font-size: 1.4rem; margin: 0 0 10px 0;">Authentic Content for Social Commerce</h4>
+              <p style="margin: 0; color: #94a3b8; font-size: 1rem; line-height: 1.6;">High-energy, relatable video content designed to stop the scroll on TikTok, Reels, and YouTube Shorts.</p>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 40px;">
+            <div style="background: rgba(255,255,255,0.9); padding: 35px; border-radius: 20px; border: 1px solid #e2e8f0; margin-bottom: 40px;">
+              <h3 style="font-size: 1.8rem; color: #0f172a; margin: 0 0 15px 0;">Visual Engine: Thumbnails & Audio Stories</h3>
+              <p style="margin: 0; color: #475569; font-size: 1.05rem; line-height: 1.6;">High-conversion content requires more than basic editing. I design high-CTR YouTube thumbnails built on color contrast theory and audience psychology, alongside deep, immersive audio story visualizers that capture viewer retention from the very first second.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+              <div>
+                <h4 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 20px;">High-CTR Thumbnail Designs</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div style="background: #fff; border-radius: 12px; padding: 15px; border: 1px solid #e2e8f0; min-height: 180px;">
+                    <div style="background: #f1f5f9; height: 100px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.9rem;">Thumbnail Slot 1</div>
+                    <h5 style="margin: 0 0 4px 0; font-size: 1rem; color: #0f172a;">E-commerce Focus</h5>
+                    <p style="margin: 0; font-size: 0.85rem; color: #64748b;">High-contrast framing engineered for marketplace videos.</p>
+                  </div>
+                  <div style="background: #fff; border-radius: 12px; padding: 15px; border: 1px solid #e2e8f0; min-height: 180px;">
+                    <div style="background: #f1f5f9; height: 100px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.9rem;">Thumbnail Slot 2</div>
+                    <h5 style="margin: 0 0 4px 0; font-size: 1rem; color: #0f172a;">Retention Layout</h5>
+                    <p style="margin: 0; font-size: 0.85rem; color: #64748b;">Custom subject isolation with vibrant neon accent glows.</p>
+                  </div>
+                  <div style="background: #fff; border-radius: 12px; padding: 15px; border: 1px solid #e2e8f0; min-height: 180px;">
+                    <div style="background: #f1f5f9; height: 100px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.9rem;">Thumbnail Slot 3</div>
+                    <h5 style="margin: 0 0 4px 0; font-size: 1rem; color: #0f172a;">Minimalist Tech</h5>
+                    <p style="margin: 0; font-size: 0.85rem; color: #64748b;">Clean text placement engineered to maximize CTR thresholds.</p>
+                  </div>
+                  <div style="background: #fff; border-radius: 12px; padding: 15px; border: 1px solid #e2e8f0; min-height: 180px;">
+                    <div style="background: #f1f5f9; height: 100px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.9rem;">Thumbnail Slot 4</div>
+                    <h5 style="margin: 0 0 4px 0; font-size: 1rem; color: #0f172a;">Bold Creative</h5>
+                    <p style="margin: 0; font-size: 0.85rem; color: #64748b;">High-saturation lighting setups designed to break text fatigue.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 20px;">Immersive Audio Story Visualizers</h4>
+                <div style="background: #fff; padding: 20px; border-radius: 16px; border: 1px solid #e2e8f0; border-bottom: 4px solid #e61e43;">
+                  <div style="border-radius: 10px; overflow: hidden; background: #000; aspect-ratio: 4/3; margin-bottom: 15px;">
+                    <video controls style="width: 100%; height: 100%; object-fit: cover;">
+                      <source src="images/audio-visualizer.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <h5 style="margin: 0 0 6px 0; font-size: 1.1rem; color: #0f172a;">Narrative & Podcast Visual Design</h5>
+                  <p style="margin: 0; font-size: 0.9rem; color: #64748b; line-height: 1.5;">Dynamic structural layouts built around audio dramas, voiceover podcasts, and story readings. Integrating custom kinetic typography displays and atmospheric background environmental enhancements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <video autoplay loop muted playsinline class="bg-video">
+        <source src="bg-video4.mp4" type="video/mp4">
+      </video>
+      <div class="contact-container">
+        <h2 style="font-size: 2.5rem; margin-bottom: 15px; color: #fff;">Get In Touch</h2>
+        <p style="font-size: 1.1rem; color: #ccc;">Let's create something incredible together.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function navigateTo(sectionId) {
+      const currentSection = document.querySelector('.hero-section.active, .about-section.active, .work-section.active, .contact-section.active');
+      const targetSection = document.getElementById(sectionId);
+
+      if (currentSection === targetSection) return;
+
+      if (currentSection) {
+        currentSection.classList.remove('active');
+        currentSection.classList.add('exit');
+        
+        setTimeout(() => {
+          currentSection.classList.remove('exit');
+        }, 500); 
+      }
+
+      if (targetSection) {
+        targetSection.classList.remove('exit');
+        targetSection.classList.add('active');
+        
+        if (sectionId === 'work') {
+          const scrollContainer = targetSection.querySelector('.work-scroll-container');
+          if (scrollContainer) scrollContainer.scrollTop = 0;
+        }
+        
+        const video = targetSection.querySelector('.bg-video');
+        if (video) {
+          video.currentTime = 0;
+          video.play().catch(err => console.log("Video track boot sync active:", err));
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

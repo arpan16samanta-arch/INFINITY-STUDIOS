@@ -44,7 +44,7 @@
       height: 100%;
       box-sizing: border-box;
       
-      /* Completely strips away any solid white backgrounds from your style.css */
+      /* Strips away any solid backgrounds from style.css */
       background-color: transparent !important;
       background: none !important;
       
@@ -60,9 +60,9 @@
         filter 0.4s ease-in-out;
     }
 
-    /* WORK SECTION SPECIFIC: Enable interior scrolling for massive content lists */
+    /* WORK SECTION SPECIFIC: Enable interior scrolling for content lists */
     .work-section {
-      overflow-y: auto; /* Allows smooth vertical scrolls across heavy project listings */
+      overflow-y: auto; 
       scrollbar-width: thin;
       scroll-behavior: smooth;
     }
@@ -91,13 +91,13 @@
       z-index: 1;
     }
 
-    /* --- Live Wallpaper Background Styling --- */
+    /* --- LOCKED LIVE WALLPAPER ENGINE --- */
     .bg-video {
-      position: fixed; /* Locked fixed so page text scrolls gracefully over the video */
+      position: fixed !important; /* Forces the video wallpaper to stay perfectly in place while content scrolls */
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
       z-index: 1;
       pointer-events: none;
@@ -121,7 +121,7 @@
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 120px 20px 60px 20px; /* Generous top padding prevents navigation bar overlapping links */
+      padding: 120px 20px 60px 20px; 
       box-sizing: border-box;
     }
 
@@ -140,12 +140,12 @@
 
     .work-section::before {
       content: '';
-      position: fixed; /* Stays fixed across long scrolling content paths */
+      position: fixed; 
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.65); /* Keeps original dark grid text readable over the river blue backdrop */
+      background: rgba(255, 255, 255, 0.65); 
       z-index: 1;
       pointer-events: none;
     }
@@ -241,14 +241,18 @@
           <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">Product Photography</h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
             <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-              <img src="product1.jpg" alt="Footwear Showcase" style="width: 100%; height: 260px; object-fit: cover;">
+              <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                <img src="product1.jpg" alt="Footwear Showcase" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
               <div style="padding: 25px;">
                 <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Footwear Showcase</h4>
                 <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Studio-quality lighting enhancement and precision background cleaning.</p>
               </div>
             </div>
             <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-              <img src="product2.jpg" alt="Commercial Edit" style="width: 100%; height: 260px; object-fit: cover;">
+              <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                <img src="product2.jpg" alt="Commercial Edit" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
               <div style="padding: 25px;">
                 <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Commercial Edit</h4>
                 <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Advanced color matching and commercial drop-shadow renders.</p>
@@ -261,7 +265,9 @@
           <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">Electronics</h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
             <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-              <img src="product3.jpg" alt="Apparel & Suits" style="width: 100%; height: 260px; object-fit: cover;">
+              <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                <img src="product3.jpg" alt="Apparel & Suits" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
               <div style="padding: 25px;">
                 <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Apparel & Suits</h4>
                 <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">High-fidelity subject isolation and texture optimization templates.</p>
@@ -274,7 +280,9 @@
           <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">Lifestyle</h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
             <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-              <img src="product4.jpg" alt="Accessories Design" style="width: 100%; height: 260px; object-fit: cover;">
+              <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                <img src="product4.jpg" alt="Accessories Design" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
               <div style="padding: 25px;">
                 <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Accessories Design</h4>
                 <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Dynamic commercial background manipulation to build buyer trust.</p>
@@ -287,7 +295,9 @@
           <h3 style="font-size: 1.8rem; color: #1e293b; border-left: 4px solid #e61e43; padding-left: 15px; margin-bottom: 25px;">Cosmetics</h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
             <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-              <img src="product4.jpg" alt="Skincare Product Design" style="width: 100%; height: 260px; object-fit: cover;">
+              <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
+                <img src="product4.jpg" alt="Skincare Product Design" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
               <div style="padding: 25px;">
                 <h4 style="font-size: 1.25rem; margin: 0 0 8px 0; color: #0f172a;">Skincare Product Design</h4>
                 <p style="margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5;">Clean lifestyle editing engineered to highlight key packaging elements.</p>
@@ -315,7 +325,7 @@
             <p style="margin: 0; color: #475569; font-size: 1.05rem; line-height: 1.6;">High-conversion content requires more than basic editing. I design high-CTR YouTube thumbnails built on color contrast theory and audience psychology, alongside deep, immersive audio story visualizers that capture viewer retention from the very first second.</p>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex-wrap: wrap;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
             <div>
               <h4 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 20px;">High-CTR Thumbnail Designs</h4>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
@@ -392,7 +402,6 @@
         targetSection.classList.remove('exit');
         targetSection.classList.add('active');
         
-        // Reset scrolling offset position when switching to the Work view pane
         if (sectionId === 'work') {
           targetSection.scrollTop = 0;
         }

@@ -44,7 +44,7 @@
       height: 100%;
       box-sizing: border-box;
       
-      /* THE FIX: Completely strips away any white backgrounds from your style.css */
+      /* Completely strips away any solid white backgrounds from your style.css */
       background-color: transparent !important;
       background: none !important;
       
@@ -94,13 +94,31 @@
       object-fit: cover; /* Forces the video to stretch cleanly across screen */
       z-index: 1;        /* Placed fully behind your original content overlay cards */
       pointer-events: none; /* Stops the video frame from blocking navigation text clicks */
-      opacity: 0.75;     /* High visibility for your video so it looks vibrant, not washed out */
+      opacity: 0.85;     /* High visibility for your video wallpaper */
     }
 
     /* Structural adjustment tags */
     .hero-container, .about-container, .work-container, .contact-container {
       position: relative;
       z-index: 2; /* Lifts all your text elements safely above video backgrounds */
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Color Combination Optimization Overlay (Improves dark text readability over video) */
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.45); /* Tint that makes your original text readable without losing the video */
+      z-index: 1;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -146,10 +164,35 @@
       <video autoplay loop muted playsinline class="bg-video">
         <source src="bg-video2.mp4" type="video/mp4">
       </video>
+      
       <div class="about-container">
-        <div class="about-intro">
-          <h2>About Infinity Studios</h2>
-          <p>Your unique agency bio content and descriptions layout.</p>
+        <div class="about-intro" style="text-align: center; max-width: 800px; padding: 0 20px;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 20px;">High-Conversion Visuals. Zero Compromise.</h2>
+          <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">In the fast-paced world of online marketplaces, your product visuals are your first—and often only—impression. I bridge the gap between amateur content and high-end commercial results.</p>
+          <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 40px;">Today, I balance my high school studies with a relentless drive to provide world-class content for sellers everywhere, helping entrepreneurs scale without technical or financial barriers.</p>
+          
+          <h3 style="font-size: 1.8rem; margin-bottom: 30px;">My Process</h3>
+          
+          <div class="process-grid" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <div class="process-card" style="background: rgba(255,255,255,0.9); padding: 25px; border-radius: 15px; width: 160px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+              <h4 style="color: #e61e43; font-size: 1.5rem; margin: 0 0 10px 0;">01</h4>
+              <p style="margin: 0; font-weight: bold; color: #111;">Image Upscaling</p>
+            </div>
+            <div class="process-card" style="background: rgba(255,255,255,0.9); padding: 25px; border-radius: 15px; width: 160px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+              <h4 style="color: #e61e43; font-size: 1.5rem; margin: 0 0 10px 0;">02</h4>
+              <p style="margin: 0; font-weight: bold; color: #111;">Color Correction</p>
+            </div>
+            <div class="process-card" style="background: rgba(255,255,255,0.9); padding: 25px; border-radius: 15px; width: 160px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+              <h4 style="color: #e61e43; font-size: 1.5rem; margin: 0 0 10px 0;">03</h4>
+              <p style="margin: 0; font-weight: bold; color: #111;">UGC Strategy</p>
+            </div>
+            <div class="process-card" style="background: rgba(255,255,255,0.9); padding: 25px; border-radius: 15px; width: 160px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+              <h4 style="color: #e61e43; font-size: 1.5rem; margin: 0 0 10px 0;">04</h4>
+              <p style="margin: 0; font-weight: bold; color: #111;">Detail Enhancement</p>
+            </div>
+          </div>
+          
+          <p style="margin-top: 40px; font-style: italic; font-weight: 500;">Stop letting bad content hold back your sales. Let's make your products look as good as they actually are.</p>
         </div>
       </div>
     </section>
@@ -160,7 +203,6 @@
       </video>
       <div class="work-container">
         <h2>Featured Work</h2>
-        <p>Showcase items grid dynamically maps here.</p>
       </div>
     </section>
 
@@ -199,7 +241,7 @@
         const video = targetSection.querySelector('.bg-video');
         if (video) {
           video.currentTime = 0;
-          video.play().catch(err => console.log("Video active update logic:", err));
+          video.play().catch(err => console.log("Video active:", err));
         }
       }
     }

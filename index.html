@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <style>
-    /* --- Pure Forward Zoom Engine & Background Setup --- */
+    /* --- Pure Forward Zoom Engine & Background Layering --- */
     body, html {
-      overflow: hidden; /* Disables page scroll wheels completely */
+      overflow: hidden; /* Disables manual page scroll wheels completely */
       margin: 0;
       padding: 0;
       width: 100%;
@@ -25,17 +25,17 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 10; /* Keeps links layer clickable */
+      z-index: 10; /* Keeps layout menus fully clickable above background scales */
     }
 
     .container {
       position: relative;
       width: 100vw;
       height: 100vh;
-      background-color: #000; /* Prevents flashing between section cuts */
+      background-color: #000; /* Prevents black/white blinking cuts */
     }
 
-    /* Transition configurations for your 4 pages */
+    /* Transition configurations for your pages */
     .hero-section, .about-section, .work-section, .contact-section {
       position: absolute;
       top: 0;
@@ -80,20 +80,20 @@
       z-index: 1;
     }
 
-    /* --- Live Video Background Styling --- */
+    /* --- Live Wallpaper Background Styling --- */
     .bg-video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Forces the clip to stretch cleanly across screen */
-      z-index: 1;        /* Placed fully behind your original card overlays */
-      pointer-events: none; /* Stops the video frame from blocking navigation interaction */
-      opacity: 0.4;      /* Balances visibility so your website content is highly readable */
+      object-fit: cover; /* Forces the video to stretch cleanly across screen */
+      z-index: 1;        /* Placed fully behind your original content overlay cards */
+      pointer-events: none; /* Stops the video frame from blocking navigation text clicks */
+      opacity: 0.35;     /* Tweaked so your white text/cards stay perfectly readable */
     }
 
-    /* Content structure adjustments */
+    /* Structural adjustment tags */
     .hero-container, .about-container, .work-container, .contact-container {
       position: relative;
       z-index: 2; /* Lifts all your text elements safely above video backgrounds */
@@ -121,7 +121,8 @@
 
     <header id="hero" class="hero-section active">
       <video autoplay loop muted playsinline class="bg-video">
-        <source src="product1.jpg" type="video/mp4"> </video>
+        <source src="bg-video1.mp4" type="video/mp4">
+      </video>
       
       <div class="hero-container">
         <img src="profile.jpg" alt="Arpan Portfolio Profile" class="profile-pic">
@@ -139,7 +140,7 @@
 
     <section id="about" class="about-section">
       <video autoplay loop muted playsinline class="bg-video">
-        <source src="video2.mp4" type="video/mp4">
+        <source src="bg-video2.mp4" type="video/mp4">
       </video>
       <div class="about-container">
         <div class="about-intro">
@@ -150,7 +151,7 @@
 
     <section id="work" class="work-section">
       <video autoplay loop muted playsinline class="bg-video">
-        <source src="video3.mp4" type="video/mp4">
+        <source src="bg-video3.mp4" type="video/mp4">
       </video>
       <div class="work-container">
         <h2>Featured Work</h2>
@@ -159,7 +160,7 @@
 
     <section id="contact" class="contact-section">
       <video autoplay loop muted playsinline class="bg-video">
-        <source src="video4.mp4" type="video/mp4">
+        <source src="bg-video4.mp4" type="video/mp4">
       </video>
       <div class="contact-container">
         <h2>Get In Touch</h2>
@@ -174,7 +175,6 @@
       const currentSection = document.querySelector('.active');
       const targetSection = document.getElementById(sectionId);
 
-      // Guard block: ignore double clicks on an open section
       if (currentSection === targetSection) return;
 
       if (currentSection) {
@@ -190,11 +190,11 @@
         targetSection.classList.remove('exit');
         targetSection.classList.add('active');
         
-        // Reset and fire background loops right when navigating inside a section
+        // Forces background loops to play smoothly right on section entry
         const video = targetSection.querySelector('.bg-video');
         if (video) {
           video.currentTime = 0;
-          video.play().catch(err => console.log("Video autoplay initialized safely:", err));
+          video.play().catch(err => console.log("Video setup ready:", err));
         }
       }
     }

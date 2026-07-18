@@ -19,6 +19,15 @@
       height: 100%;
     }
 
+    /* Force your navigation bar to stay on top of all animated sections */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5; /* Keeps buttons clickable above changing layers */
+    }
+
     .container {
       position: relative;
       width: 100vw;
@@ -39,7 +48,7 @@
       opacity: 0;
       transform: scale(3.5); 
       filter: blur(20px);    
-      pointer-events: none;  
+      pointer-events: none;  /* Blocks clicks completely while hidden */
       
       /* Smooth, aggressive warp transition curves */
       transition: 
@@ -56,7 +65,7 @@
       opacity: 1;
       transform: scale(1);
       filter: blur(0px);
-      pointer-events: auto;
+      pointer-events: auto; /* Restores button and element clicking */
       z-index: 2;
     }
 
@@ -81,8 +90,8 @@
       height: 100%;
       object-fit: cover; /* Keeps aspect ratio and fills screen */
       z-index: 1;        /* Sits underneath your content */
-      pointer-events: none; /* Allows text selection and button clicks over the video */
-      opacity: 0.5;      /* Lowers video brightness slightly so your content pops cleanly */
+      pointer-events: none; /* Crucial: stops the video frame from stealing link clicks */
+      opacity: 0.5;      /* Dims video so text layers remain easy to read */
     }
 
     /* Keeps your structural sections anchored relative to the screen layout */
@@ -96,8 +105,7 @@
 
   <nav>
     <div class="nav-container">
-      <div class="class">
-        <img src="logo.png" alt="Infinity Studios Logo" class="custom-logo">
+      <div class="logo"> <img src="logo.png" alt="Infinity Studios Logo" class="custom-logo">
         <span>INFINITY STUDIOS</span>
       </div>
       <div class="nav-links">
@@ -110,77 +118,3 @@
   </nav>
 
   <div class="container">
-
-    <header id="hero" class="hero-section active">
-      <video autoplay loop muted playsinline class="bg-video">
-        <source src="video1.mp4" type="video/mp4">
-      </video>
-      
-      <div class="hero-container">
-        <img src="profile.jpg" alt="Arpan Portfolio Profile" class="profile-pic">
-        <div>
-          <span class="badge">E-commerce Content Creator</span>
-          <h1>Visuals That Drive Sales.</h1>
-          <p class="hero-subtitle">I build high-conversion imagery and high-energy UGC video content tailored specifically for modern digital marketplaces.</p>
-          <div class="cta-group">
-            <a href="#" class="btn btn-primary" onclick="navigateTo('work')">View Portfolio</a>
-            <a href="#" class="btn btn-secondary" onclick="navigateTo('contact')">Let's Talk</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section id="about" class="about-section">
-      <video autoplay loop muted playsinline class="bg-video">
-        <source src="video2.mp4" type="video/mp4">
-      </video>
-      
-      <div class="about-container">
-        <div class="about-intro">
-          <h2>About Infinity Studios</h2>
-          <div class="about-intro">
-             </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" class="work-section">
-      <video autoplay loop muted playsinline class="bg-video">
-        <source src="video3.mp4" type="video/mp4">
-      </video>
-      
-      <div class="work-container">
-        <h2>Featured Work</h2>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-      <video autoplay loop muted playsinline class="bg-video">
-        <source src="video4.mp4" type="video/mp4">
-      </video>
-      
-      <div class="contact-container">
-        <h2>Get In Touch</h2>
-        <p>Let's create something incredible together.</p>
-        </div>
-    </section>
-
-  </div>
-
-  <script>
-    function navigateTo(sectionId) {
-      const currentSection = document.querySelector('.active');
-      const targetSection = document.getElementById(sectionId);
-
-      if (currentSection === targetSection) return;
-
-      if (currentSection) {
-        currentSection.classList.remove('active');
-        currentSection.classList.add('exit');
-        
-        setTimeout(() => {
-          currentSection.classList.remove('exit');
-        }, 500); 
-      }
-
-      if (targetSection

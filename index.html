@@ -93,15 +93,24 @@
 
     /* --- LOCKED LIVE WALLPAPER ENGINE --- */
     .bg-video {
-      position: fixed !important; /* Forces the video wallpaper to stay perfectly in place while content scrolls */
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: 1;
       pointer-events: none;
       opacity: 0.85;
+    }
+
+    /* THE SCROLL FIX: Force the video inside the scrollable Work layout to stay stuck at the top window frame */
+    .work-section .bg-video {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
     }
 
     /* Structural container layouts */
@@ -375,8 +384,8 @@
         <source src="bg-video4.mp4" type="video/mp4">
       </video>
       <div class="contact-container">
-        <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Get In Touch</h2>
-        <p style="font-size: 1.1rem;">Let's create something incredible together.</p>
+        <h2 style="font-size: 2.5rem; margin-bottom: 15px; color: #fff;">Get In Touch</h2>
+        <p style="font-size: 1.1rem; color: #ccc;">Let's create something incredible together.</p>
       </div>
     </section>
 
@@ -384,7 +393,7 @@
 
   <script>
     function navigateTo(sectionId) {
-      const currentSection = document.querySelector('.active');
+      const currentSection = document.querySelector('.hero-section.active, .about-section.active, .work-section.active, .contact-section.active');
       const targetSection = document.getElementById(sectionId);
 
       if (currentSection === targetSection) return;

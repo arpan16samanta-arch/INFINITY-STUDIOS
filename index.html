@@ -237,6 +237,13 @@
       </div>
     </section>
 
+Yes, absolutely certain. The exact layout structure, your content categories, text, grids, buttons, and custom embedded styles remain 100% untouched.
+
+The only modification is the introduction of `<div class="work-scroll-container">` inside the work section. This structurally separates your content from the video so it can scroll independently while keeping the video fixed in place.
+
+If you want to apply this precise background scroll lock directly to your **existing file** without copy-pasting the entire thing, you can just replace your `<section id="work">` block with this exact snippet:
+
+```html
     <section id="work" class="work-section">
       <video autoplay loop muted playsinline class="bg-video">
         <source src="bg-video3.mp4" type="video/mp4">
@@ -382,6 +389,8 @@
         </div>
       </div>
     </section>
+
+```
 
     <section id="contact" class="contact-section">
       <video autoplay loop muted playsinline class="bg-video">

@@ -23,7 +23,7 @@
       position: relative;
       width: 100vw;
       height: 100vh;
-      background-color: #000; /* Keeps cuts dark and cinematic */
+      background-color: #000; 
     }
 
     /* Target all major page components */
@@ -37,8 +37,8 @@
       
       /* DEFAULT HIDDEN STATE: Massive, blurry, waiting out in front of the lens */
       opacity: 0;
-      transform: scale(3.5); /* Massive zoom-in starting point */
-      filter: blur(20px);    /* Cinematic motion blur */
+      transform: scale(3.5); 
+      filter: blur(20px);    
       pointer-events: none;  
       
       /* Smooth, aggressive warp transition curves */
@@ -57,7 +57,7 @@
       transform: scale(1);
       filter: blur(0px);
       pointer-events: auto;
-      z-index: 2; /* Layered over the old exiting section */
+      z-index: 2;
     }
 
     /* EXITING STATE: Pulled deep inside the camera background */
@@ -66,10 +66,35 @@
     .work-section.exit, 
     .contact-section.exit {
       opacity: 0;
-      transform: scale(0.1); /* Shrinks inward into the background */
+      transform: scale(0.1); 
       filter: blur(15px);
       pointer-events: none;
       z-index: 1;
+    }
+
+    /* --- Live Video Background Styling --- */
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Keeps aspect ratio and fills screen */
+      z-index: 1;        /* Sits underneath text content */
+      pointer-events: none; /* Allows text selection and button clicks over the video */
+      opacity: 0.5;      /* Optional: lowers brightness so text pops cleanly */
+    }
+
+    /* Content wrapper to force text to sit on top of video layer */
+    .section-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 </head>
@@ -93,18 +118,6 @@
   <div class="container">
 
     <header id="hero" class="hero-section active">
-      <div class="hero-container">
-        <img src="profile.jpg" alt="Arpan Portfolio Profile" class="profile-pic">
-        <div>
-          <span class="badge">E-commerce Content Creator</span>
-          <h1>Visuals That Drive Sales.</h1>
-          <p class="hero-subtitle">I build high-conversion imagery and high-energy UGC video content tailored specifically for modern digital marketplaces.</p>
-          <div class="cta-group">
-            <a href="#" class="btn btn-primary" onclick="navigateTo('work')">View Portfolio</a>
-            <a href="#" class="btn btn-secondary" onclick="navigateTo('contact')">Let's Talk</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section id="about" class="about-section">
+      <video autoplay loop muted playsinline class="bg-video">
+        <source src="video1.mp4" type="video/mp4">
+      </video

@@ -534,28 +534,29 @@ footer a {
 footer a:hover {
   opacity: 0.8;
 }
-/* Hide the contact section completely by default */
-.contact-section-wrapper {
-  display: none !important;
-  visibility: hidden;
-  opacity: 0;
-}
-
-/* Force the video inside it to hide so it doesn't show behind other pages */
+/* 1. Hide the video element completely on every other page */
+#contact video,
 .contact-section-wrapper video {
   display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
-/* ONLY show the section and the video when it is active */
-.contact-section-wrapper.active {
-  display: flex !important;
-  visibility: visible;
-  opacity: 1;
+/* 2. ONLY allow the video to display when the contact section is active */
+.contact-section-wrapper.active video {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 3. Manage the contact section container layout */
+.contact-section-wrapper {
+  display: none !important;
   background-color: #111;
 }
 
-.contact-section-wrapper.active video {
-  display: block !important;
+.contact-section-wrapper.active {
+  display: flex !important;
 }
 /* --- RESPONSIVE CONTROLS --- */
 @media (max-width: 1024px) {

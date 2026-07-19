@@ -534,29 +534,52 @@ footer a {
 footer a:hover {
   opacity: 0.8;
 }
-/* 1. Hide the video element completely on every other page */
-#contact video,
-.contact-section-wrapper video {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
+/* ==========================================================
+   CONTACT SECTION STATE MANAGEMENT
+   ========================================================== */
+
+/* Hides the contact section completely by default, just like your other pages */
+.contact-section {
+  display: none;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
 }
 
-/* 2. ONLY allow the video to display when the contact section is active */
-.contact-section-wrapper.active video {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* 3. Manage the contact section container layout */
-.contact-section-wrapper {
-  display: none !important;
-  background-color: #111;
-}
-
-.contact-section-wrapper.active {
+/* Displays the container instantly when your script gives it the active class */
+.contact-section.active {
   display: flex !important;
+}
+
+/* Beautiful glassmorphism box styling */
+.contact-box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-premium, 24px);
+  padding: 50px 40px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.contact-box h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.contact-box p {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 /* --- RESPONSIVE CONTROLS --- */
 @media (max-width: 1024px) {

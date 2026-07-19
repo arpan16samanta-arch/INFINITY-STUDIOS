@@ -534,7 +534,15 @@ footer a {
 footer a:hover {
   opacity: 0.8;
 }
+/* Fix to prevent contact section from overlapping other sections */
+.contact-section-wrapper {
+  display: none !important;
+}
 
+.contact-section-wrapper.active {
+  display: flex !important;
+  background-color: #111;
+}
 /* --- RESPONSIVE CONTROLS --- */
 @media (max-width: 1024px) {
     .process-grid { grid-template-columns: repeat(2, 1fr); }

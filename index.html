@@ -404,39 +404,50 @@
 </section>
   </div>
 
-  <script>
-    function navigateTo(sectionId) {
-      const currentSection = document.querySelector('.hero-section.active, .about-section.active, .work-section.active, .contact-section.active');
-      const targetSection = document.getElementById(sectionId);
+ <script>
+function navigateTo(sectionId) {
+  const currentSection = document.querySelector('.hero-section.active, .about-section.active, .work-section.active, .contact-section.active');
+  const targetSection = document.getElementById(sectionId);
 
-      if (currentSection === targetSection) return;
+  if (currentSection === targetSection) return;
 
-      if (currentSection) {
-        currentSection.classList.remove('active');
-        currentSection.classList.add('exit');
-        
-        setTimeout(() => {
-          currentSection.classList.remove('exit');
-        }, 500); 
-      }
+  // Handle section transition out
+  if (currentSection) {
+    currentSection.classList.remove('active');
+    currentSection.classList.add('exit');
+    
+    setTimeout(() => {
+      currentSection.classList.remove('exit');
+    }, 500);
+  }
 
-      if (targetSection) {
-        targetSection.classList.remove('exit');
-        targetSection.classList.add('active');
-        
-        if (sectionId === 'work') {
-          const scrollContainer = targetSection.querySelector('.work-scroll-container');
-          if (scrollContainer) scrollContainer.scrollTop = 0;
-        }
-        
-        const video = targetSection.querySelector('.bg-video');
-        if (video) {
-          video.currentTime = 0;
-          video.play().catch(err => console.log("Video track boot sync active:", err));
-        }
-      }
+  // Handle section transition in
+  if (targetSection) {
+    targetSection.classList.remove('exit');
+    targetSection.classList.add('active');
+
+    if (sectionId === 'work') {
+      const scrollContainer = targetSection.querySelector('.work-scroll-container');
+      if (scrollContainer) scrollContainer.scrollTop = 0;
     }
-  </script>
 
+    const video = targetSection.querySelector('.bg-video');
+    if (video) {
+      video.currentTime = 0;
+      video.play().catch(err => console.log("Video track boot sync active:", err));
+    }
+  }
+
+  // === NEW: Update header tabs to show the thin Rosé border ===
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => link.classList.remove('active'));
+
+  // Find the exact menu link you clicked and highlight it
+  const clickedLink = Array.from(navLinks).find(link => link.getAttribute('onclick').includes(`'${sectionId}'`));
+  if (clickedLink) {
+    clickedLink.classList.add('active');
+  }
+}
+</script>
 </body>
 </html>

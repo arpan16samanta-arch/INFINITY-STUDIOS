@@ -634,6 +634,40 @@ footer a:hover {
   box-shadow: 0 12px 30px rgba(255, 42, 95, 0.6) !important;
   transform: translateY(-2px);
 }
+/* ==========================================================
+   DOWNWARD SECTION NAVIGATION ARROWS
+   ========================================================== */
+
+/* Positions the arrow perfectly at the bottom center of the active section */
+.section-scroll-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg); /* Centers it and points it downwards */
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%; /* Makes it a perfect circle highlight */
+  color: #ffffff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+/* Premium interactive hover states matching your theme profile */
+.section-scroll-arrow:hover {
+  background: #ff2a5f !important; /* Your brand Rosé color */
+  border-color: #ff2a5f !important;
+  box-shadow: 0 0 20px rgba(255, 42, 95, 0.6);
+  transform: translateX(-50%) rotate(90deg) scale(1.1);
+}
 /* --- RESPONSIVE CONTROLS --- */
 @media (max-width: 1024px) {
     .process-grid { grid-template-columns: repeat(2, 1fr); }

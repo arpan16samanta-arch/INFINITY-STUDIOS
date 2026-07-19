@@ -535,6 +535,24 @@ footer a:hover {
   opacity: 0.8;
 }
 /* ==========================================================
+   ACTIVE NAVIGATION LINK INDICATOR
+   ========================================================== */
+
+/* Gives nav links a starting layout so they don't shift when active */
+.nav-links a {
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Adds the thin round rectangular Rosé border when active */
+.nav-links a.active,
+.nav-links a[class*="active"] {
+  border-color: #ff2a5f !important; /* Your brand Rosé accent color */
+  color: #ff2a5f !important;        /* Matches the text to the border */
+}
+/* ==========================================================
    CONTACT SECTION STATE MANAGEMENT
    ========================================================== */
 

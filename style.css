@@ -534,14 +534,28 @@ footer a {
 footer a:hover {
   opacity: 0.8;
 }
-/* Fix to prevent contact section from overlapping other sections */
+/* Hide the contact section completely by default */
 .contact-section-wrapper {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Force the video inside it to hide so it doesn't show behind other pages */
+.contact-section-wrapper video {
   display: none !important;
 }
 
+/* ONLY show the section and the video when it is active */
 .contact-section-wrapper.active {
   display: flex !important;
+  visibility: visible;
+  opacity: 1;
   background-color: #111;
+}
+
+.contact-section-wrapper.active video {
+  display: block !important;
 }
 /* --- RESPONSIVE CONTROLS --- */
 @media (max-width: 1024px) {
